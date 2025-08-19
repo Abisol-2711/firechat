@@ -1,8 +1,10 @@
-const rootLayout = () => {
+import { Outlet } from 'react-router'
+
+const RootLayout = () => {
   return (
     <div>
-      <h2>root Layout</h2>
+      <Outlet />
     </div>
   )
 }
-export default rootLayout
+export default RootLayout
