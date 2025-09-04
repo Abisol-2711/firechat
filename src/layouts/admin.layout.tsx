@@ -4,11 +4,11 @@ import { useSigninCheck } from 'reactfire'
 const AdminLayout = () => {
   const { status, data: signInCheckResult, hasEmitted } = useSigninCheck()
 
-  console.log({
-    status,
-    signInCheckResult,
-    hasEmitted,
-  })
+  // console.log({
+  //   status,
+  //   signInCheckResult,
+  //   hasEmitted,
+  // })
 
   if (status === 'loading' || !hasEmitted) {
     return <div>Loading...</div>

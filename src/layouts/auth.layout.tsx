@@ -4,22 +4,25 @@ import { useSigninCheck } from 'reactfire'
 const AuthLayout = () => {
   const { status, data: signInCheckResult, hasEmitted } = useSigninCheck()
 
-  console.log({
-    status,
-    signInCheckResult,
-    hasEmitted,
-  })
+  // console.log({
+  //   status,
+  //   signInCheckResult,
+  //   hasEmitted,
+  // })
 
   if (status === 'loading' || !hasEmitted) {
     return <div>Loading...</div>
   }
 
   if (status === 'success' && signInCheckResult.signedIn) {
-    return <Navigate to="/admin" replace />
+    return <Navigate to="/admin" />
   }
+
   return (
-    <div>
-      <Outlet />
+    <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="max-w-md w-full">
+        <Outlet />
+      </div>
     </div>
   )
 }
